@@ -87,7 +87,7 @@ func GenerateData() {
 	if len(os.Args) == 2 {
 		splitStr := strings.SplitN(os.Args[1], "=", 2)
 		if len(splitStr) == 2 {
-			if splitStr[0] == "write-data" && splitStr[1] == "true" {
+			if splitStr[0] == "--write-data" && splitStr[1] == "true" {
 				fmt.Print("entered here")
 				//todo: more optimization on how data is stored in file
 				strData, _ := json.MarshalIndent(DriverData, "", " ")
