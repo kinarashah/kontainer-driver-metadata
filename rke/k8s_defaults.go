@@ -1,7 +1,9 @@
 package rke
 
 import (
+	"encoding/json"
 	"fmt"
+	"os"
 	"strings"
 
 	"github.com/rancher/kontainer-driver-metadata/rke/templates"
@@ -11,15 +13,31 @@ import (
 	"github.com/rancher/types/image"
 )
 
+// Data to be written in dataFilePath
+type Data struct {
+	K8sVersionServiceOptions  map[string]v3.KubernetesServicesOptions
+	K8sVersionRKESystemImages map[string]v3.RKESystemImages
+	K8sVersionedTemplates     map[string]map[string]string
+
+	K8sVersionToRKEVersions map[string]v3.RKEVersions
+
+	K8sVersionWindowsSystemImages   map[string]v3.WindowsSystemImages
+	K8sVersionWindowsServiceOptions map[string]v3.KubernetesServicesOptions
+}
+
+const (
+	rkeDataFilePath = "./data.json"
+)
+
 var (
 	m = image.Mirror
 
 	// K8sVersionToRKESystemImages is dynamically populated on init() with the latest versions
-	K8sVersionToRKESystemImages map[string]v3.RKESystemImages
+	K8sVersionToRKESystemImages   map[string]v3.RKESystemImages
 	K8sVersionWindowsSystemImages map[string]v3.WindowsSystemImages
 
 	// K8sVersionServiceOptions - service options per k8s version
-	K8sVersionServiceOptions map[string]v3.KubernetesServicesOptions
+	K8sVersionServiceOptions        map[string]v3.KubernetesServicesOptions
 	K8sVersionWindowsServiceOptions map[string]v3.KubernetesServicesOptions
 
 	// K8sVersionToRKEVersions - min/max RKE versions per k8s version
@@ -70,28 +88,38 @@ func InitRKE() {
 		panic("Do not initialize or add values to K8sVersionToRKESystemImages")
 	}
 
-	K8sVersionToRKESystemImages = loadK8sRKESystemImages()
+	data := Data{
+		K8sVersionRKESystemImages: loadK8sRKESystemImages(),
+	}
 
-	for version, images := range K8sVersionToRKESystemImages {
+	for version, images := range data.K8sVersionRKESystemImages {
 		longName := "rancher/hyperkube:" + version
 		if !strings.HasPrefix(longName, images.Kubernetes) {
 			panic(fmt.Sprintf("For K8s version %s, the Kubernetes image tag should be a substring of %s, currently it is %s", version, version, images.Kubernetes))
 		}
 	}
 
-	K8sVersionServiceOptions = loadK8sVersionServiceOptions()
-	K8sVersionToRKEVersions = loadK8sRKEVersions()
+	data.K8sVersionServiceOptions = loadK8sVersionServiceOptions()
+	data.K8sVersionToRKEVersions = loadK8sRKEVersions()
 	RKEDefaultK8sVersions = loadRKEDefaultK8sVersions()
-	K8sVersionedTemplates = templates.LoadK8sVersionedTemplates()
+	data.K8sVersionedTemplates = templates.LoadK8sVersionedTemplates()
 
 	for _, defaultK8s := range RKEDefaultK8sVersions {
-		if _, ok := K8sVersionToRKESystemImages[defaultK8s]; !ok {
+		if _, ok := data.K8sVersionRKESystemImages[defaultK8s]; !ok {
 			panic(fmt.Sprintf("Default K8s version %v is not found in the K8sVersionToRKESystemImages", defaultK8s))
 		}
 	}
 
 	// init Windows versions
-	K8sVersionWindowsSystemImages = loadK8sVersionWindowsSystemimages()
-	K8sVersionWindowsServiceOptions = loadK8sVersionWindowsServiceOptions()
+	data.K8sVersionWindowsSystemImages = loadK8sVersionWindowsSystemimages()
+	data.K8sVersionWindowsServiceOptions = loadK8sVersionWindowsServiceOptions()
 
+	//todo: more optimization on how data is stored in file
+	strData, _ := json.MarshalIndent(data, "", " ")
+	jsonFile, err := os.Create(rkeDataFilePath)
+	if err != nil {
+		panic(fmt.Errorf("err %v", err))
+	}
+	jsonFile.Write(strData)
+	jsonFile.Close()
 }
