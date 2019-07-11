@@ -1632,6 +1632,7 @@
  "K8sVersionInfo": {
   "v1.10": {
    "maxRKEVersion": "0.2.2",
+   "minRancherVersion": "2.3",
    "maxRancherVersion": "2.2"
   },
   "v1.10.1-rancher1": {
@@ -1640,10 +1641,21 @@
   },
   "v1.11": {
    "maxRKEVersion": "0.2.2",
+   "minRancherVersion": "2.3",
    "maxRancherVersion": "2.2"
+  },
+  "v1.12": {
+   "minRancherVersion": "2.3"
+  },
+  "v1.13": {
+   "minRancherVersion": "2.3"
+  },
+  "v1.14": {
+   "minRancherVersion": "2.3"
   },
   "v1.8": {
    "maxRKEVersion": "0.2.2",
+   "minRancherVersion": "2.3",
    "maxRancherVersion": "2.2"
   },
   "v1.8.10-rancher1-1": {
@@ -1656,6 +1668,7 @@
   },
   "v1.9": {
    "maxRKEVersion": "0.2.2",
+   "minRancherVersion": "2.3",
    "maxRancherVersion": "2.2"
   },
   "v1.9.7-rancher1": {

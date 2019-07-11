@@ -1,6 +1,6 @@
 package rke
 
-import "github.com/rancher/types/apis/management.cattle.io/v3"
+import v3 "github.com/rancher/types/apis/management.cattle.io/v3"
 
 func loadRancherDefaultK8sVersions() map[string]string {
 	return map[string]string{
@@ -28,20 +28,33 @@ DeprecateRKEVersion: No create/update allowed for RKE >= DeprecateRKEVersion
 func loadK8sVersionInfo() map[string]v3.K8sVersionInfo {
 	return map[string]v3.K8sVersionInfo{
 		"v1.8": {
+			MinRancherVersion: "2.3",
 			MaxRancherVersion: "2.2",
 			MaxRKEVersion:     "0.2.2",
 		},
 		"v1.9": {
+			MinRancherVersion: "2.3",
 			MaxRancherVersion: "2.2",
 			MaxRKEVersion:     "0.2.2",
 		},
 		"v1.10": {
+			MinRancherVersion: "2.3",
 			MaxRancherVersion: "2.2",
 			MaxRKEVersion:     "0.2.2",
 		},
 		"v1.11": {
+			MinRancherVersion: "2.3",
 			MaxRancherVersion: "2.2",
 			MaxRKEVersion:     "0.2.2",
+		},
+		"v1.12": {
+			MinRancherVersion: "2.3",
+		},
+		"v1.13": {
+			MinRancherVersion: "2.3",
+		},
+		"v1.14": {
+			MinRancherVersion: "2.3",
 		},
 		"v1.8.10-rancher1-1": {
 			DeprecateRKEVersion:     "0.2.2",
