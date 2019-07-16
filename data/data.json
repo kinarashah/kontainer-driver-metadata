@@ -1645,7 +1645,7 @@
   "v1.13": {
    "maxRancherVersion": "2.3.3"
   },
-  "v1.13.9-rancher1-1": {
+  "v1.13.7-rancher1-1": {
    "minRancherVersion": "2.3.3"
   },
   "v1.8": {
