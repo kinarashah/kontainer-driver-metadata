@@ -1643,10 +1643,10 @@
    "maxRancherVersion": "2.2"
   },
   "v1.13": {
-   "maxRancherVersion": "2.3.3"
+   "maxRancherVersion": "2.3.5"
   },
   "v1.13.7-rancher1-1": {
-   "minRancherVersion": "2.3.3"
+   "minRancherVersion": "2.3.5"
   },
   "v1.8": {
    "maxRKEVersion": "0.2.2",
