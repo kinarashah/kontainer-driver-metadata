@@ -1642,9 +1642,6 @@
    "maxRKEVersion": "0.2.2",
    "maxRancherVersion": "2.2"
   },
-  "v1.12": {
-   "minRancherVersion": "2.3.4"
-  },
   "v1.13.7-rancher1-1": {
    "maxRancherVersion": "2.3.4"
   },
@@ -1670,7 +1667,7 @@
   }
  },
  "RancherDefaultK8sVersions": {
-  "2.3": "v1.14.3-rancher1-1",
+  "2.3.3": "v1.12.4-rancher1-1",
   "default": "v1.14.3-rancher1-1"
  },
  "RKEDefaultK8sVersions": {
