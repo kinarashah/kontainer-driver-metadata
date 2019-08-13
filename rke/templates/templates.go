@@ -17,56 +17,56 @@ const (
 	NginxIngress  = "nginxIngress"
 	TemplateKeys  = "templateKeys"
 
-	calicov112 = "calico-v1.12"
+	calicov18 = "calico-v1.8"
 	calicov113 = "calico-v1.13"
 	calicov115 = "calico-v1.15"
 
 	canalv115 = "canal-v1.15"
 	canalv113 = "canal-v1.13"
-	canalv112 = "canal-v1.12"
+	canalv18 = "canal-v1.8"
 
 	flannelv115    = "flannel-v1.15"
-	flannelDefault = "flannel-default"
+	flannelv18 = "flannel-v1.8"
 
-	coreDnsDefault = "coredns-default"
-	kubeDnsDefault = "kubedns-default"
+	coreDnsv18 = "coredns-v1.8"
+	kubeDnsv18 = "kubedns-v1.8"
 
-	metricsServerDefault = "metricsserver-default"
+	metricsServerv18 = "metricsserver-v1.8"
 
-	weaveDefault        = "weave-default"
-	nginxIngressDefault = "nginxingress-default"
+	weavev18        = "weave-v1.8"
+	nginxIngressv18 = "nginxingress-v1.8"
 )
 
 func LoadK8sVersionedTemplates() map[string]map[string]string {
 	return map[string]map[string]string{
 		Calico: {
-			">=1.15.0":         calicov115,
+			">=1.15.0 <1.16.0":         calicov115,
 			">=1.13.0 <1.15.0": calicov113,
-			"default":          calicov112,
+			">=1.8.0 <1.13.0":          calicov18,
 		},
 		Canal: {
-			">=1.15.0":         canalv115,
+			">=1.15.0 <1.16.0":         canalv115,
 			">=1.13.0 <1.15.0": canalv113,
-			"default":          canalv112,
+			">=1.8.0 <1.13.0":          canalv18,
 		},
 		Flannel: {
 			">=1.15.0": flannelv115,
-			"default":  flannelDefault,
+			">=1.8.0 <1.15.0":  flannelv18,
 		},
 		CoreDNS: {
-			"default": coreDnsDefault,
+			">=1.8.0 <1.16.0": coreDnsv18,
 		},
 		KubeDNS: {
-			"default": kubeDnsDefault,
+			">=1.8.0 <1.16.0": kubeDnsv18,
 		},
 		MetricsServer: {
-			"default": metricsServerDefault,
+			">=1.8.0 <1.16.0": metricsServerv18,
 		},
 		Weave: {
-			"default": weaveDefault,
+			">=1.8.0 <1.16.0": weavev18,
 		},
 		NginxIngress: {
-			"default": nginxIngressDefault,
+			">=1.8.0 <1.16.0": nginxIngressv18,
 		},
 		TemplateKeys: getTemplates(),
 	}
@@ -76,22 +76,22 @@ func getTemplates() map[string]string {
 	return map[string]string{
 		calicov113: CalicoTemplateV113,
 		calicov115: CalicoTemplateV115,
-		calicov112: CalicoTemplateV112,
+		calicov18: CalicoTemplateV112,
 
 		flannelv115:    FlannelTemplateV115,
-		flannelDefault: FlannelTemplate,
+		flannelv18: FlannelTemplate,
 
 		canalv113: CanalTemplateV113,
-		canalv112: CanalTemplateV112,
+		canalv18: CanalTemplateV112,
 		canalv115: CanalTemplateV115,
 
-		coreDnsDefault: CoreDNSTemplate,
-		kubeDnsDefault: KubeDNSTemplate,
+		coreDnsv18: CoreDNSTemplate,
+		kubeDnsv18: KubeDNSTemplate,
 
-		metricsServerDefault: MetricsServerTemplate,
+		metricsServerv18: MetricsServerTemplate,
 
-		weaveDefault: WeaveTemplate,
+		weavev18: WeaveTemplate,
 
-		nginxIngressDefault: NginxIngressTemplate,
+		nginxIngressv18: NginxIngressTemplate,
 	}
 }
