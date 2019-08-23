@@ -19,7 +19,9 @@ const (
 
 	calicov18  = "calico-v1.8"
 	calicov113 = "calico-v1.13"
+	canalv113New = "calico-v1.13-1"
 	calicov115 = "calico-v1.15"
+	canalv115New = "calico-v1.15-1"
 	calicov116 = "calico-v1.16"
 
 	canalv115 = "canal-v1.15"
@@ -38,6 +40,7 @@ const (
 
 	weavev18        = "weave-v1.8"
 	nginxIngressv18 = "nginxingress-v1.8"
+	nginxIngressv13 = "nginxingress-v1.13.10"
 )
 
 func LoadK8sVersionedTemplates() map[string]map[string]string {
@@ -49,9 +52,11 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.8.0 <1.13.0":  calicov18,
 		},
 		Canal: {
-			">=1.16.0-alpha":         canalv116,
-			">=1.15.0 <1.16.0-alpha": canalv115,
-			">=1.13.0 <1.15.0": canalv113,
+			">=1.16.0-alpha":         canalv116, // can update same one
+			">=1.15.0 <=1.15.2": canalv115,
+			">=1.15.3 <1.16.0-alpha": canalv115New,
+			">=1.13.0 <=1.13.9 || >=1.14.0 <=1.14.5":canalv113,
+			">=1.13.10 <1.14.0 || >=1.14.6 <1.15.0":  canalv113New,
 			">=1.8.0 <1.13.0":  canalv18,
 		},
 		Flannel: {
@@ -72,7 +77,8 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.8.0 <1.16.0": weavev18,
 		},
 		NginxIngress: {
-			">=1.8.0 <1.16.0": nginxIngressv18,
+			">=1.8.0 <=1.13.9 || >=1.14.0 <=1.14.5 || >=1.15.0 <=1.15.2": nginxIngressv18,
+			">=1.13.10 <1.14.0 || >=1.14.6 <1.15.0 || >=1.15.3 <1.16.0": nginxIngressv13,
 		},
 		TemplateKeys: getTemplates(),
 	}
@@ -90,8 +96,10 @@ func getTemplates() map[string]string {
 		flannelv18:  FlannelTemplate,
 
 		canalv113: CanalTemplateV113,
+		canalv113New: CanalTemplateV113, // new template
 		canalv18:  CanalTemplateV112,
 		canalv115: CanalTemplateV115,
+		canalv115New : CanalTemplateV115, // new template
 		canalv116: CanalTemplateV116,
 
 		coreDnsv18: CoreDNSTemplate,
@@ -102,5 +110,6 @@ func getTemplates() map[string]string {
 		weavev18: WeaveTemplate,
 
 		nginxIngressv18: NginxIngressTemplate,
+		nginxIngressv13: NginxIngressTemplate, //New template here
 	}
 }
