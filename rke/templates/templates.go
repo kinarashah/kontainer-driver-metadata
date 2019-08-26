@@ -51,7 +51,7 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 		},
 		Canal: {
 			">=1.16.0-alpha":                     canalv116,
-			">=1.15.0-rancher0 <1.16.0-alpha":    canalv115,
+			">=1.15.0-rancher0 <=1.15.2-rancher9":    canalv115,
 			">=1.13.0-rancher0 <1.15.0-rancher0": canalv113,
 			">=1.8.0-rancher0 <1.13.0-rancher0":  canalv18,
 		},
@@ -77,8 +77,8 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.13.10-rancher1-3 <1.14.0-rancher0": nginxIngressV115,
 			">=1.14.0-rancher0 <=1.14.6-rancher1-1": nginxIngressv18,
 			">=1.14.6-rancher2 <1.15.0-rancher0":    nginxIngressV115,
-			">=1.15.0-rancher0 <=1.15.3-rancher1-1": nginxIngressv18,
-			">=1.15.3-rancher2":                     nginxIngressV115,
+			">=1.15.0-rancher0 <=1.15.2-rancher9": nginxIngressv18,
+			">=1.15.6-rancher0":                     nginxIngressV115,
 		},
 		TemplateKeys: getTemplates(),
 	}
