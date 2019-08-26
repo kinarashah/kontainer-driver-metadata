@@ -22,10 +22,11 @@ const (
 	calicov115 = "calico-v1.15"
 	calicov116 = "calico-v1.16"
 
-	canalv115 = "canal-v1.15"
-	canalv116 = "canal-v1.16"
-	canalv113 = "canal-v1.13"
-	canalv18  = "canal-v1.8"
+	canalv115  = "canal-v1.15"
+	canalv1154 = "canal-v1.15.4"
+	canalv116  = "canal-v1.16"
+	canalv113  = "canal-v1.13"
+	canalv18   = "canal-v1.8"
 
 	flannelv116 = "flannel-v1.16"
 	flannelv115 = "flannel-v1.15"
@@ -50,7 +51,8 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 		},
 		Canal: {
 			">=1.16.0-alpha":                     canalv116,
-			">=1.15.0-rancher0 <1.16.0-alpha":    canalv115,
+			">=1.15.4-rancher1 <1.16.0-alpha":    canalv1154,
+			">=1.15.0-rancher0 <1.15.4-rancher0": canalv115,
 			">=1.13.0-rancher0 <1.15.0-rancher0": canalv113,
 			">=1.8.0-rancher0 <1.13.0-rancher0":  canalv18,
 		},
@@ -89,10 +91,11 @@ func getTemplates() map[string]string {
 		flannelv116: FlannelTemplateV116,
 		flannelv18:  FlannelTemplate,
 
-		canalv113: CanalTemplateV113,
-		canalv18:  CanalTemplateV112,
-		canalv115: CanalTemplateV115,
-		canalv116: CanalTemplateV116,
+		canalv113:  CanalTemplateV113,
+		canalv18:   CanalTemplateV112,
+		canalv115:  CanalTemplateV115,
+		canalv1154: CanalTemplateV1154,
+		canalv116:  CanalTemplateV116,
 
 		coreDnsv18: CoreDNSTemplate,
 		kubeDnsv18: KubeDNSTemplate,

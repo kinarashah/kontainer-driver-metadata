@@ -53,12 +53,12 @@ func init() {
 		K8sVersionRKESystemImages: loadK8sRKESystemImages(),
 	}
 
-	for version, images := range DriverData.K8sVersionRKESystemImages {
-		longName := "rancher/hyperkube:" + version
-		if !strings.HasPrefix(longName, images.Kubernetes) {
-			panic(fmt.Sprintf("For K8s version %s, the Kubernetes image tag should be a substring of %s, currently it is %s", version, version, images.Kubernetes))
-		}
-	}
+	// for version, images := range DriverData.K8sVersionRKESystemImages {
+	// 	longName := "rancher/hyperkube:" + version
+	// 	if !strings.HasPrefix(longName, images.Kubernetes) {
+	// 		panic(fmt.Sprintf("For K8s version %s, the Kubernetes image tag should be a substring of %s, currently it is %s", version, version, images.Kubernetes))
+	// 	}
+	// }
 
 	DriverData.RKEDefaultK8sVersions = loadRKEDefaultK8sVersions()
 	DriverData.RancherDefaultK8sVersions = loadRancherDefaultK8sVersions()
@@ -129,7 +129,7 @@ func GenerateData() {
 		splitStr := strings.SplitN(os.Args[1], "=", 2)
 		if len(splitStr) == 2 {
 			if splitStr[0] == "--write-data" && splitStr[1] == "true" {
-				
+
 				buf := new(bytes.Buffer)
 				enc := json.NewEncoder(buf)
 				enc.SetEscapeHTML(false)
