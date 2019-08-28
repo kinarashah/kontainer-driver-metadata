@@ -27,7 +27,7 @@ func loadK8sVersionServiceOptions() map[string]v3.KubernetesServicesOptions {
 			Kubeproxy:      getKubeProxyOptions(),
 			Scheduler:      getSchedulerOptions(),
 		},
-		"v1.15.3": {
+		"v1.15.3-rancher1-1": {
 			KubeAPI:        getKubeAPIOptions1153(),
 			Kubelet:        getKubeletOptions115(),
 			KubeController: getKubeControllerOptions(),
