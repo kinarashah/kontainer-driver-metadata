@@ -371,7 +371,7 @@
     "v": "2"
    }
   },
-  "v1.15.3": {
+  "v1.15.3-rancher1-1": {
    "kubeapi": {
     "allow-privileged": "true",
     "anonymous-auth": "false",
