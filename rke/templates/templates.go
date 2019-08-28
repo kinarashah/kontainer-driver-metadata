@@ -26,6 +26,7 @@ const (
 	canalv116 = "canal-v1.16"
 	canalv113 = "canal-v1.13"
 	canalv18  = "canal-v1.8"
+	canalv1153= "canal-v1.15.3"
 
 	flannelv116 = "flannel-v1.16"
 	flannelv115 = "flannel-v1.15"
@@ -51,6 +52,7 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 		},
 		Canal: {
 			">=1.16.0-alpha":                     canalv116,
+			">= 1.15.3-rancher0 <=1.15.4-rancher0": canalv1153,
 			">=1.15.0-rancher0 <=1.15.2-rancher9":    canalv115,
 			">=1.13.0-rancher0 <1.15.0-rancher0": canalv113,
 			">=1.8.0-rancher0 <1.13.0-rancher0":  canalv18,
@@ -77,7 +79,7 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.13.10-rancher1-3 <1.14.0-rancher0": nginxIngressV115,
 			">=1.14.0-rancher0 <=1.14.6-rancher1-1": nginxIngressv18,
 			">=1.14.6-rancher2 <1.15.0-rancher0":    nginxIngressV115,
-			">=1.15.0-rancher0 <=1.15.2-rancher9": nginxIngressv18,
+			">=1.15.0-rancher0 <=1.15.3-rancher9": nginxIngressv18,
 			">=1.15.6-rancher0":                     nginxIngressV115,
 		},
 		TemplateKeys: getTemplates(),
@@ -98,6 +100,7 @@ func getTemplates() map[string]string {
 		canalv113: CanalTemplateV113,
 		canalv18:  CanalTemplateV112,
 		canalv115: CanalTemplateV115,
+		canalv1153:CanalTemplateV1153,
 		canalv116: CanalTemplateV116,
 
 		coreDnsv18: CoreDNSTemplate,

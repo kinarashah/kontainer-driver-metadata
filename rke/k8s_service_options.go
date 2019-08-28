@@ -23,6 +23,13 @@ func loadK8sVersionServiceOptions() map[string]v3.KubernetesServicesOptions {
 		"v1.15": {
 			KubeAPI:        getKubeAPIOptions115(),
 			Kubelet:        getKubeletOptions115(),
+			KubeController: getKubeControllerOptions1153(),
+			Kubeproxy:      getKubeProxyOptions(),
+			Scheduler:      getSchedulerOptions(),
+		},
+		"v1.15.3": {
+			KubeAPI:        getKubeAPIOptions1153(),
+			Kubelet:        getKubeletOptions115(),
 			KubeController: getKubeControllerOptions(),
 			Kubeproxy:      getKubeProxyOptions(),
 			Scheduler:      getSchedulerOptions(),
@@ -113,6 +120,13 @@ func getKubeAPIOptions115() map[string]string {
 	return kubeAPIOptions
 }
 
+func getKubeAPIOptions1153() map[string]string {
+	kubeAPIOptions := getKubeAPIOptions114()
+	kubeAPIOptions["enable-admission-plugins"] = fmt.Sprintf("%s,%s", kubeAPIOptions["enable-admission-plugins"], "TaintNodesByCondition,PersistentVolumeClaimResize")
+	kubeAPIOptions["runtime-config"] = "authorization.k8s.io/v1beta1=true"
+	return kubeAPIOptions
+}
+
 func getKubeAPIOptions116() map[string]string {
 	kubeAPIOptions := getKubeAPIOptions114()
 	kubeAPIOptions["enable-admission-plugins"] = fmt.Sprintf("%s,%s", kubeAPIOptions["enable-admission-plugins"], "TaintNodesByCondition,PersistentVolumeClaimResize")
@@ -168,6 +182,22 @@ func getKubeControllerOptions() map[string]string {
 		"enable-hostpath-provisioner": "false",
 		"leader-elect":                "true",
 		"node-monitor-grace-period":   "40s",
+		"pod-eviction-timeout":        "5m0s",
+		"profiling":                   "false",
+		"terminated-pod-gc-threshold": "1000",
+		"v":                           "2",
+	}
+}
+
+func getKubeControllerOptions1153() map[string]string {
+	return map[string]string{
+		"address":                     "0.0.0.0",
+		"allow-untagged-cloud":        "true",
+		"allocate-node-cidrs":         "true",
+		"configure-cloud-routes":      "false",
+		"enable-hostpath-provisioner": "false",
+		"leader-elect":                "true",
+		"node-monitor-grace-period":   "45s",
 		"pod-eviction-timeout":        "5m0s",
 		"profiling":                   "false",
 		"terminated-pod-gc-threshold": "1000",

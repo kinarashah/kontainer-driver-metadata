@@ -1,0 +1,594 @@
+{
+ "v1.10.0-rancher1-1": {
+  "calico": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=calico-v1.8",
+  "canal": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=canal-v1.8",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.10.1-rancher2-1": {
+  "calico": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=calico-v1.8",
+  "canal": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=canal-v1.8",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.10.11-rancher1-1": {
+  "calico": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=calico-v1.8",
+  "canal": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=canal-v1.8",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.10.12-rancher1-1": {
+  "calico": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=calico-v1.8",
+  "canal": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=canal-v1.8",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.10.3-rancher2-1": {
+  "calico": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=calico-v1.8",
+  "canal": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=canal-v1.8",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.10.5-rancher1-1": {
+  "calico": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=calico-v1.8",
+  "canal": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=canal-v1.8",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.10.5-rancher1-2": {
+  "calico": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=calico-v1.8",
+  "canal": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=canal-v1.8",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.11.1-rancher1-1": {
+  "calico": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=calico-v1.8",
+  "canal": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=canal-v1.8",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.11.2-rancher1-1": {
+  "calico": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=calico-v1.8",
+  "canal": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=canal-v1.8",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.11.2-rancher1-2": {
+  "calico": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=calico-v1.8",
+  "canal": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=canal-v1.8",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.11.3-rancher1-1": {
+  "calico": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=calico-v1.8",
+  "canal": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=canal-v1.8",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.11.5-rancher1-1": {
+  "calico": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=calico-v1.8",
+  "canal": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=canal-v1.8",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.11.6-rancher1-1": {
+  "calico": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=calico-v1.8",
+  "canal": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=canal-v1.8",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.11.8-rancher1-1": {
+  "calico": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=calico-v1.8",
+  "canal": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=canal-v1.8",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.11.9-rancher1-1": {
+  "calico": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=calico-v1.8",
+  "canal": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=canal-v1.8",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.11.9-rancher1-2": {
+  "calico": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=calico-v1.8",
+  "canal": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=canal-v1.8",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.11.9-rancher1-3": {
+  "calico": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=calico-v1.8",
+  "canal": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=canal-v1.8",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.12.0-rancher1-1": {
+  "calico": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=calico-v1.8",
+  "canal": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=canal-v1.8",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.12.1-rancher1-1": {
+  "calico": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=calico-v1.8",
+  "canal": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=canal-v1.8",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.12.10-rancher1-1": {
+  "calico": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=calico-v1.8",
+  "canal": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=canal-v1.8",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.12.10-rancher1-2": {
+  "calico": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=calico-v1.8",
+  "canal": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=canal-v1.8",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.12.3-rancher1-1": {
+  "calico": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=calico-v1.8",
+  "canal": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=canal-v1.8",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.12.4-rancher1-1": {
+  "calico": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=calico-v1.8",
+  "canal": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=canal-v1.8",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.12.5-rancher1-1": {
+  "calico": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=calico-v1.8",
+  "canal": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=canal-v1.8",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.12.5-rancher1-2": {
+  "calico": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=calico-v1.8",
+  "canal": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=canal-v1.8",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.12.6-rancher1-1": {
+  "calico": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=calico-v1.8",
+  "canal": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=canal-v1.8",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.12.6-rancher1-2": {
+  "calico": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=calico-v1.8",
+  "canal": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=canal-v1.8",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.12.7-rancher1-1": {
+  "calico": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=calico-v1.8",
+  "canal": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=canal-v1.8",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.12.7-rancher1-2": {
+  "calico": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=calico-v1.8",
+  "canal": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=canal-v1.8",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.12.7-rancher1-3": {
+  "calico": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=calico-v1.8",
+  "canal": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=canal-v1.8",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.12.7-rancher1-4": {
+  "calico": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=calico-v1.8",
+  "canal": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=canal-v1.8",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.12.9-rancher1-1": {
+  "calico": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=calico-v1.8",
+  "canal": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=canal-v1.8",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.13.1-rancher1-1": {
+  "calico": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=calico-v1.13",
+  "canal": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=canal-v1.13",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.13.1-rancher1-2": {
+  "calico": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=calico-v1.13",
+  "canal": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=canal-v1.13",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.13.10-rancher1-1": {
+  "calico": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=calico-v1.13",
+  "canal": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=canal-v1.13",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.13.10-rancher1-2": {
+  "calico": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=calico-v1.13",
+  "canal": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=canal-v1.13",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.13.10-rancher1-3": {
+  "calico": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=calico-v1.13",
+  "canal": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=canal-v1.13",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.13.10-rancher1-3 <1.14.0-rancher0 key=nginxingress-v1.15",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.13.4-rancher1-1": {
+  "calico": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=calico-v1.13",
+  "canal": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=canal-v1.13",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.13.4-rancher1-2": {
+  "calico": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=calico-v1.13",
+  "canal": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=canal-v1.13",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.13.5-rancher1-1": {
+  "calico": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=calico-v1.13",
+  "canal": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=canal-v1.13",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.13.5-rancher1-2": {
+  "calico": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=calico-v1.13",
+  "canal": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=canal-v1.13",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.13.5-rancher1-3": {
+  "calico": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=calico-v1.13",
+  "canal": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=canal-v1.13",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.13.7-rancher1-1": {
+  "calico": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=calico-v1.13",
+  "canal": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=canal-v1.13",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.13.9-rancher1-1": {
+  "calico": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=calico-v1.13",
+  "canal": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=canal-v1.13",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.13.9-rancher1-2": {
+  "calico": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=calico-v1.13",
+  "canal": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=canal-v1.13",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.14.1-rancher1-1": {
+  "calico": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=calico-v1.13",
+  "canal": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=canal-v1.13",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.14.0-rancher0 <=1.14.6-rancher1-1 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.14.1-rancher1-2": {
+  "calico": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=calico-v1.13",
+  "canal": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=canal-v1.13",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.14.0-rancher0 <=1.14.6-rancher1-1 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.14.3-rancher1-1": {
+  "calico": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=calico-v1.13",
+  "canal": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=canal-v1.13",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.14.0-rancher0 <=1.14.6-rancher1-1 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.14.5-rancher1-1": {
+  "calico": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=calico-v1.13",
+  "canal": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=canal-v1.13",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.14.0-rancher0 <=1.14.6-rancher1-1 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.14.6-rancher1-1": {
+  "calico": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=calico-v1.13",
+  "canal": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=canal-v1.13",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.14.0-rancher0 <=1.14.6-rancher1-1 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.14.6-rancher2-1": {
+  "calico": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=calico-v1.13",
+  "canal": "range=>=1.13.0-rancher0 <1.15.0-rancher0 key=canal-v1.13",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.14.6-rancher2 <1.15.0-rancher0 key=nginxingress-v1.15",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.15.0-rancher1-1": {
+  "calico": "range=>=1.15.0-rancher0 <1.16.0-alpha key=calico-v1.15",
+  "canal": "range=>=1.15.0-rancher0 <=1.15.2-rancher9 key=canal-v1.15",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.15.0-rancher0 <1.16.0-alpha key=flannel-v1.15",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.15.0-rancher0 <=1.15.3-rancher9 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.15.2-rancher1-1": {
+  "calico": "range=>=1.15.0-rancher0 <1.16.0-alpha key=calico-v1.15",
+  "canal": "range=>=1.15.0-rancher0 <=1.15.2-rancher9 key=canal-v1.15",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.15.0-rancher0 <1.16.0-alpha key=flannel-v1.15",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.15.0-rancher0 <=1.15.3-rancher9 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.15.3-rancher1-1": {
+  "calico": "range=>=1.15.0-rancher0 <1.16.0-alpha key=calico-v1.15",
+  "canal": "range=>= 1.15.3-rancher0 <=1.15.4-rancher0 key=canal-v1.15.3",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.15.0-rancher0 <1.16.0-alpha key=flannel-v1.15",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.15.0-rancher0 <=1.15.3-rancher9 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.16.0-beta.1-rancher1-1": {
+  "calico": "range=>=1.16.0-alpha key=calico-v1.16",
+  "canal": "range=>=1.16.0-alpha key=canal-v1.16",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.16.0-alpha key=flannel-v1.16",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.15.6-rancher0 key=nginxingress-v1.15",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.8.11-rancher2-1": {
+  "calico": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=calico-v1.8",
+  "canal": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=canal-v1.8",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.9.5-rancher1-1": {
+  "calico": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=calico-v1.8",
+  "canal": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=canal-v1.8",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.9.7-rancher2-1": {
+  "calico": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=calico-v1.8",
+  "canal": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=canal-v1.8",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ },
+ "v1.9.7-rancher2-2": {
+  "calico": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=calico-v1.8",
+  "canal": "range=>=1.8.0-rancher0 <1.13.0-rancher0 key=canal-v1.8",
+  "coreDNS": "range=>=1.8.0-rancher0 <1.16.0 key=coredns-v1.8",
+  "flannel": "range=>=1.8.0-rancher0 <1.15.0-rancher0 key=flannel-v1.8",
+  "kubeDNS": "range=>=1.8.0-rancher0 <1.16.0 key=kubedns-v1.8",
+  "metricsServer": "range=>=1.8.0-rancher0 <1.16.0 key=metricsserver-v1.8",
+  "nginxIngress": "range=>=1.8.0-rancher0 <1.13.10-rancher1-3 key=nginxingress-v1.8",
+  "weave": "range=>=1.8.0-rancher0 <1.16.0 key=weave-v1.8"
+ }
+}
+
+generating data.json
