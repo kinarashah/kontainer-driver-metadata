@@ -28,7 +28,7 @@ func loadK8sVersionServiceOptions() map[string]v3.KubernetesServicesOptions {
 			Scheduler:      getSchedulerOptions(),
 		},
 		"v1.15": {
-			KubeAPI:        getKubeAPIOptions115(),
+			KubeAPI:        getKubeAPIOptions1153(),
 			Kubelet:        getKubeletOptions115(),
 			KubeController: getKubeControllerOptions(),
 			Kubeproxy:      getKubeProxyOptions(),
@@ -113,10 +113,19 @@ func getKubeAPIOptions114() map[string]string {
 	return kubeAPIOptions
 }
 
+func getKubeAPIOptions1153() map[string]string {
+	kubeAPIOptions := getKubeAPIOptions114()
+	kubeAPIOptions["enable-admission-plugins"] = fmt.Sprintf("%s,%s", kubeAPIOptions["enable-admission-plugins"], "TaintNodesByCondition,PersistentVolumeClaimResize")
+	kubeAPIOptions["runtime-config"] = "authorization.k8s.io/v1beta1=true"
+	kubeAPIOptions["hello"] = "world"
+	return kubeAPIOptions
+}
+
 func getKubeAPIOptions115() map[string]string {
 	kubeAPIOptions := getKubeAPIOptions114()
 	kubeAPIOptions["enable-admission-plugins"] = fmt.Sprintf("%s,%s", kubeAPIOptions["enable-admission-plugins"], "TaintNodesByCondition,PersistentVolumeClaimResize")
 	kubeAPIOptions["runtime-config"] = "authorization.k8s.io/v1beta1=true"
+	kubeAPIOptions["hello"] = "world"
 	return kubeAPIOptions
 }
 

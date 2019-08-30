@@ -311,7 +311,7 @@ items:
                   host: 127.0.0.1
                   path: /status
                   port: 6784
-                initialDelaySeconds: 30
+                initialDelaySeconds: 300
               resources:
                 requests:
                   cpu: 10m
