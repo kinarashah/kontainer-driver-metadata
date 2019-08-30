@@ -50,6 +50,10 @@ func loadK8sVersionInfo() map[string]v3.K8sVersionInfo {
 		"v1.12": {
 			MaxRancherVersion: "2.2",
 			MaxRKEVersion:     "0.2.2",
+			DeprecateRancherVersion: "2.3",
+		},
+		"v1.13.10-rancher1-3" : {
+			DeprecateRancherVersion: "2.3",
 		},
 		"v1.8.10-rancher1-1": {
 			DeprecateRKEVersion:     "0.2.2",
