@@ -1842,6 +1842,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CoreDNS:                   m("coredns/coredns:1.3.1"),
 			CoreDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.3.0"),
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.3"),
+			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.7"),
 		},
 		// Out of band post v2.3.5
 		"v1.15.10-rancher1-1": {
