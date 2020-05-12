@@ -29,6 +29,7 @@ const (
 	canalv18            = "canal-v1.8"
 	canalv113           = "canal-v1.13"
 	canalv115           = "canal-v1.15"
+	canalv1152          = "canal-v1.1152"
 	canalv115Privileged = "canal-v1.15-privileged"
 	canalv116           = "canal-v1.16"
 	canalv117           = "canal-v1.17"
@@ -74,15 +75,16 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.8.0-rancher0 <1.13.0-rancher0":     calicov18,
 		},
 		Canal: {
-			">=1.17.4-rancher0":                     canalv117Privileged,
-			">=1.17.0-rancher0 <1.17.4-rancher0":    canalv117,
-			">=1.16.8-rancher0 <1.17.0-rancher0":    canalv117Privileged,
-			">=1.16.4-rancher1 <1.16.8-rancher0":    canalv117,
-			">=1.16.0-alpha <1.16.4-rancher1":       canalv116,
-			">=1.15.11-rancher1-1 <1.16.0-alpha":    canalv115Privileged,
-			">=1.15.0-rancher0 <1.15.11-rancher1-1": canalv115,
-			">=1.13.0-rancher0 <1.15.0-rancher0":    canalv113,
-			">=1.8.0-rancher0 <1.13.0-rancher0":     canalv18,
+			">=1.17.4-rancher0":                        canalv117Privileged,
+			">=1.17.0-rancher0 <1.17.4-rancher0":       canalv117,
+			">=1.16.8-rancher0 <1.17.0-rancher0":       canalv117Privileged,
+			">=1.16.4-rancher1 <1.16.8-rancher0":       canalv117,
+			">=1.16.0-alpha <1.16.4-rancher1":          canalv116,
+			">=1.15.11-rancher1-1 <1.16.0-alpha":       canalv115Privileged,
+			">=1.15.9-rancher1-2 <1.15.11-rancher1-1": canalv1152,
+			">=1.15.0-rancher0 <=1.15.9-rancher1-1":    canalv115,
+			">=1.13.0-rancher0 <1.15.0-rancher0":       canalv113,
+			">=1.8.0-rancher0 <1.13.0-rancher0":        canalv18,
 		},
 		Flannel: {
 			">=1.16.0-alpha":                    flannelv116,
@@ -124,6 +126,7 @@ func getTemplates() map[string]string {
 	return map[string]string{
 		calicov113:           CalicoTemplateV113,
 		calicov115:           CalicoTemplateV115,
+		canalv1152:           CanalTemplateV1152,
 		calicov115Privileged: CalicoTemplateV115Privileged,
 		calicov116:           CalicoTemplateV116,
 		calicov117:           CalicoTemplateV117,
