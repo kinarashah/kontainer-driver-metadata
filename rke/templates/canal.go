@@ -1552,6 +1552,8 @@ spec:
             # Set Felix endpoint to host default action to ACCEPT.
             - name: FELIX_DEFAULTENDPOINTTOHOSTACTION
               value: "ACCEPT"
+			- name: FELIX_XDPENABLED
+              value: "false"
             # Disable IPv6 on Kubernetes.
             - name: FELIX_IPV6SUPPORT
               value: "false"
@@ -1563,7 +1565,7 @@ spec:
               value: ""
             # Enable felix logging to stdout
             - name: FELIX_LOGSEVERITYSCREEN
-              value: "Warning"
+              value: "Debug"
             - name: FELIX_HEALTHENABLED
               value: "true"
           securityContext:
