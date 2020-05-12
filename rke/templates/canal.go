@@ -2189,6 +2189,9 @@ spec:
             # Disable IPv6 on Kubernetes.
             - name: FELIX_IPV6SUPPORT
               value: "false"
+            # Disable XDP support
+            - name: FELIX_XDPENABLED
+              value: "false"
             # Disable felix logging to file
             - name: FELIX_LOGFILEPATH
               value: "none"
