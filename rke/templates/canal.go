@@ -2200,7 +2200,7 @@ spec:
               value: ""
             # Enable felix logging to stdout
             - name: FELIX_LOGSEVERITYSCREEN
-              value: "Info"
+              value: "Debug"
             - name: FELIX_HEALTHENABLED
               value: "true"
           securityContext:
