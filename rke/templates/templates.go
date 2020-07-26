@@ -33,6 +33,9 @@ const (
 	canalv11512                   = "canal-v1.15.12"
 	canalv115Privileged           = "canal-v1.15-privileged"
 	canalv115PrivilegedCalico3134 = "canal-v1.15-privileged-calico3134"
+
+	canalv115kinara = "canal-kinara"
+
 	canalv116                     = "canal-v1.16"
 	canalv117                     = "canal-v1.17"
 	canalv117Privileged           = "canal-v1.17-privileged"
@@ -100,7 +103,7 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 
 			">=1.15.9-rancher1-3 <1.15.11-rancher1-1": canalv115,
 
-			">=1.15.9-rancher1-2 <1.15.9-rancher1-3": canalv115PrivilegedCalico3134,
+			">=1.15.9-rancher1-2 <1.15.9-rancher1-3": canalv115kinara,
 
 			">=1.15.0-rancher0 <1.15.9-rancher1-2": canalv115,
 
@@ -172,6 +175,9 @@ func getTemplates() map[string]string {
 		canalv11512:                   CanalTemplateV115,
 		canalv115Privileged:           CanalTemplateV115Privileged,
 		canalv115PrivilegedCalico3134: CanalTemplateV115PrivilegedCalico3134,
+
+		canalv115kinara: CanalTemplateV115PrivilegedCalico3134,
+
 		canalv116:                     CanalTemplateV116,
 		canalv117:                     CanalTemplateV117,
 		canalv117Privileged:           CanalTemplateV117Privileged,
