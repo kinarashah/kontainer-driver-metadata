@@ -97,7 +97,14 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			// 1.15.12-rancher1-1 comes from 2.2.13, uses old canalv115 template with new key canalv11512
 			// new key is to enable rancher passing template to rke for an already vendored template
 			">=1.15.12-rancher1-1 <1.15.12-rancher2-2": canalv11512,
-			">=1.15.0-rancher0 <1.15.11-rancher1-1":    canalv115,
+
+			">=1.15.9-rancher1-3 <1.15.11-rancher1-1": canalv115,
+
+			">=1.15.9-rancher1-2 <1.15.9-rancher1-3": canalv115PrivilegedCalico3134,
+
+			">=1.15.0-rancher0 <1.15.9-rancher1-2": canalv115,
+
+			//">=1.15.0-rancher0 <1.15.11-rancher1-1":    canalv115,
 			">=1.13.0-rancher0 <1.15.0-rancher0":       canalv113,
 			">=1.8.0-rancher0 <1.13.0-rancher0":        canalv18,
 		},
