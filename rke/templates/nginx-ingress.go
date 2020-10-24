@@ -1022,7 +1022,7 @@ spec:
             {{- if eq .NetworkMode "hostNetwork"}}
             containerPort: 80
             {{- else if or (eq .NetworkMode "hostPort") (eq .NetworkMode "none")}}
-            containerPort: {{with (index .ExtraArgs "http-port")}}{{.}}{{else}}80{{end}}
+            containerPort: 80
             {{- if eq .NetworkMode "hostPort"}}
             hostPort: {{.HTTPPort}}
             {{- end }}
@@ -1031,7 +1031,7 @@ spec:
             {{- if eq .NetworkMode "hostNetwork"}}
             containerPort: 443
             {{- else if or (eq .NetworkMode "hostPort") (eq .NetworkMode "none")}}
-            containerPort: {{with (index .ExtraArgs "https-port")}}{{.}}{{else}}443{{end}}
+            containerPort: 443
             {{- if eq .NetworkMode "hostPort"}}
             hostPort: {{.HTTPSPort}}
             {{- end }}
