@@ -113,7 +113,7 @@ spec:
       labels:
         k8s-app: metrics-server
     spec:
-      priorityClassName: system-cluster-critical
+      priorityClassName: system-node-critical
       affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
