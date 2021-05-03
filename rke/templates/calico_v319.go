@@ -1,5 +1,6 @@
 package templates
 
+// CalicoTemplateV3_19_0 based on Calico v3.19.0, adds rancher specific changes
 const CalicoTemplateV3_19_0 = `
 # Source: calico/templates/calico-config.yaml
 # This ConfigMap is used to configure a self-hosted Calico installation.
@@ -15,9 +16,17 @@ data:
   calico_backend: "bird"
 
   # Configure the MTU to use for workload interfaces and tunnels.
-  # By default, MTU is auto-detected, and explicitly setting this field should not be required.
-  # You can override auto-detection by providing a non-zero value.
-  veth_mtu: "0"
+  # - If Wireguard is enabled, set to your network MTU - 60
+  # - Otherwise, if VXLAN or BPF mode is enabled, set to your network MTU - 50
+  # - Otherwise, if IPIP is enabled, set to your network MTU - 20
+  # - Otherwise, if not using any encapsulation, set to your network MTU.
+{{- if .MTU }}
+{{- if ne .MTU 0 }}
+  veth_mtu: "{{.MTU}}"
+{{- end}}
+{{- else }}
+  veth_mtu: "1440"
+{{- end}}
 
   # The CNI network configuration to install on each node. The special
   # values in this config will be automatically populated.
@@ -28,7 +37,7 @@ data:
       "plugins": [
         {
           "type": "calico",
-          "log_level": "info",
+          "log_level": "warning",
           "log_file_path": "/var/log/calico/cni/cni.log",
           "datastore_type": "kubernetes",
           "nodename": "__KUBERNETES_NODE_NAME__",
@@ -107,11 +116,11 @@ spec:
                       description: Name given to community value.
                       type: string
                     value:
-                      description: Value must be of format `aa:nn` or `aa:nn:mm`.
-                        For standard community use `aa:nn` format, where `aa` and
-                        `nn` are 16 bit number. For large community use `aa:nn:mm`
-                        format, where `aa`, `nn` and `mm` are 32 bit number. Where,
-                        `aa` is an AS Number, `nn` and `mm` are per-AS identifier.
+                      description: Value must be of format "aa:nn" or "aa:nn:mm".
+                        For standard community use "aa:nn" format, where "aa" and
+                        "nn" are 16 bit number. For large community use "aa:nn:mm"
+                        format, where "aa", "nn" and "mm" are 32 bit number. Where,
+                        "aa" is an AS Number, "nn" and "mm" are per-AS identifier.
                       pattern: ^(\d+):(\d+)$|^(\d+):(\d+):(\d+)$
                       type: string
                   type: object
@@ -142,12 +151,12 @@ spec:
                       type: string
                     communities:
                       description: Communities can be list of either community names
-                        already defined in `Specs.Communities` or community value
-                        of format `aa:nn` or `aa:nn:mm`. For standard community use
-                        `aa:nn` format, where `aa` and `nn` are 16 bit number. For
-                        large community use `aa:nn:mm` format, where `aa`, `nn` and
-                        `mm` are 32 bit number. Where,`aa` is an AS Number, `nn` and
-                        `mm` are per-AS identifier.
+                        already defined in "Specs.Communities" or community value
+                        of format "aa:nn" or "aa:nn:mm". For standard community use
+                        "aa:nn" format, where "aa" and "nn" are 16 bit number. For
+                        large community use "aa:nn:mm" format, where "aa", "nn" and
+                        "mm" are 32 bit number. Where,"aa" is an AS Number, "nn" and
+                        "mm" are per-AS identifier.
                       items:
                         type: string
                       type: array
@@ -276,9 +285,9 @@ spec:
                     type: object
                 type: object
               peerIP:
-                description: The IP address of the peer followed by an optional port
-                  number to peer with. If port number is given, format should be `[<IPv6>]:port`
-                  or `<IPv4>:<port>` for IPv4. If optional port number is not set,
+               description: The IP address of the peer followed by an optional port
+                  number to peer with. If port number is given, format should be "[<IPv6>]:port"
+                  or "<IPv4>:<port>" for IPv4. If optional port number is not set,
                   and this peer IP and ASNumber belongs to a calico/node with ListenPort
                   set in BGPConfiguration, then we use that port to peer.
                 type: string
@@ -550,7 +559,7 @@ spec:
                 description: 'BPFLogLevel controls the log level of the BPF programs
                   when in BPF dataplane mode.  One of "Off", "Info", or "Debug".  The
                   logs are emitted to the BPF trace pipe, accessible with the command
-                  `tc exec bpf debug`. [Default: Off].'
+                  "tc exec bpf debug". [Default: Off].'
                 type: string
               chainInsertMode:
                 description: 'ChainInsertMode controls whether Felix hooks the kernel''s
@@ -1070,7 +1079,7 @@ spec:
                             by the rule. \n For NetworkPolicy, an empty NamespaceSelector
                             implies that the Selector is limited to selecting only
                             workload endpoints in the same namespace as the NetworkPolicy.
-                            \n For NetworkPolicy, `global()` NamespaceSelector implies
+                            \n For NetworkPolicy, 'global()' NamespaceSelector implies
                             that the Selector is limited to selecting only GlobalNetworkSet
                             or HostEndpoint. \n For GlobalNetworkPolicy, an empty
                             NamespaceSelector implies the Selector applies to workload
@@ -1180,7 +1189,7 @@ spec:
                             the rule to apply to HTTP requests that use one of the
                             listed HTTP Paths. Multiple paths are OR''d together.
                             e.g: - exact: /foo - prefix: /bar NOTE: Each entry may
-                            ONLY specify either a `exact` or a `prefix` match. The
+                            ONLY specify either a "exact" or a "prefix" match. The
                             validator will check for it.'
                           items:
                             description: 'HTTPPath specifies an HTTP path to match.
@@ -1275,7 +1284,7 @@ spec:
                             by the rule. \n For NetworkPolicy, an empty NamespaceSelector
                             implies that the Selector is limited to selecting only
                             workload endpoints in the same namespace as the NetworkPolicy.
-                            \n For NetworkPolicy, `global()` NamespaceSelector implies
+                            \n For NetworkPolicy, 'global()' NamespaceSelector implies
                             that the Selector is limited to selecting only GlobalNetworkSet
                             or HostEndpoint. \n For GlobalNetworkPolicy, an empty
                             NamespaceSelector implies the Selector applies to workload
@@ -1401,7 +1410,7 @@ spec:
                             by the rule. \n For NetworkPolicy, an empty NamespaceSelector
                             implies that the Selector is limited to selecting only
                             workload endpoints in the same namespace as the NetworkPolicy.
-                            \n For NetworkPolicy, `global()` NamespaceSelector implies
+                            \n For NetworkPolicy, 'global()' NamespaceSelector implies
                             that the Selector is limited to selecting only GlobalNetworkSet
                             or HostEndpoint. \n For GlobalNetworkPolicy, an empty
                             NamespaceSelector implies the Selector applies to workload
@@ -1511,7 +1520,7 @@ spec:
                             the rule to apply to HTTP requests that use one of the
                             listed HTTP Paths. Multiple paths are OR''d together.
                             e.g: - exact: /foo - prefix: /bar NOTE: Each entry may
-                            ONLY specify either a `exact` or a `prefix` match. The
+                            ONLY specify either a "exact" or a "prefix" match. The
                             validator will check for it.'
                           items:
                             description: 'HTTPPath specifies an HTTP path to match.
@@ -1606,7 +1615,7 @@ spec:
                             by the rule. \n For NetworkPolicy, an empty NamespaceSelector
                             implies that the Selector is limited to selecting only
                             workload endpoints in the same namespace as the NetworkPolicy.
-                            \n For NetworkPolicy, `global()` NamespaceSelector implies
+                            \n For NetworkPolicy, 'global()' NamespaceSelector implies
                             that the Selector is limited to selecting only GlobalNetworkSet
                             or HostEndpoint. \n For GlobalNetworkPolicy, an empty
                             NamespaceSelector implies the Selector applies to workload
@@ -2515,7 +2524,7 @@ spec:
                             by the rule. \n For NetworkPolicy, an empty NamespaceSelector
                             implies that the Selector is limited to selecting only
                             workload endpoints in the same namespace as the NetworkPolicy.
-                            \n For NetworkPolicy, `global()` NamespaceSelector implies
+                            \n For NetworkPolicy, 'global()' NamespaceSelector implies
                             that the Selector is limited to selecting only GlobalNetworkSet
                             or HostEndpoint. \n For GlobalNetworkPolicy, an empty
                             NamespaceSelector implies the Selector applies to workload
@@ -2625,7 +2634,7 @@ spec:
                             the rule to apply to HTTP requests that use one of the
                             listed HTTP Paths. Multiple paths are OR''d together.
                             e.g: - exact: /foo - prefix: /bar NOTE: Each entry may
-                            ONLY specify either a `exact` or a `prefix` match. The
+                            ONLY specify either a "exact" or a "prefix" match. The
                             validator will check for it.'
                           items:
                             description: 'HTTPPath specifies an HTTP path to match.
@@ -2720,7 +2729,7 @@ spec:
                             by the rule. \n For NetworkPolicy, an empty NamespaceSelector
                             implies that the Selector is limited to selecting only
                             workload endpoints in the same namespace as the NetworkPolicy.
-                            \n For NetworkPolicy, `global()` NamespaceSelector implies
+                            \n For NetworkPolicy, 'global()' NamespaceSelector implies
                             that the Selector is limited to selecting only GlobalNetworkSet
                             or HostEndpoint. \n For GlobalNetworkPolicy, an empty
                             NamespaceSelector implies the Selector applies to workload
@@ -2846,7 +2855,7 @@ spec:
                             by the rule. \n For NetworkPolicy, an empty NamespaceSelector
                             implies that the Selector is limited to selecting only
                             workload endpoints in the same namespace as the NetworkPolicy.
-                            \n For NetworkPolicy, `global()` NamespaceSelector implies
+                            \n For NetworkPolicy, 'global()' NamespaceSelector implies
                             that the Selector is limited to selecting only GlobalNetworkSet
                             or HostEndpoint. \n For GlobalNetworkPolicy, an empty
                             NamespaceSelector implies the Selector applies to workload
@@ -2956,7 +2965,7 @@ spec:
                             the rule to apply to HTTP requests that use one of the
                             listed HTTP Paths. Multiple paths are OR''d together.
                             e.g: - exact: /foo - prefix: /bar NOTE: Each entry may
-                            ONLY specify either a `exact` or a `prefix` match. The
+                            ONLY specify either a "exact" or a "prefix" match. The
                             validator will check for it.'
                           items:
                             description: 'HTTPPath specifies an HTTP path to match.
@@ -3051,7 +3060,7 @@ spec:
                             by the rule. \n For NetworkPolicy, an empty NamespaceSelector
                             implies that the Selector is limited to selecting only
                             workload endpoints in the same namespace as the NetworkPolicy.
-                            \n For NetworkPolicy, `global()` NamespaceSelector implies
+                            \n For NetworkPolicy, 'global()' NamespaceSelector implies
                             that the Selector is limited to selecting only GlobalNetworkSet
                             or HostEndpoint. \n For GlobalNetworkPolicy, an empty
                             NamespaceSelector implies the Selector applies to workload
@@ -3207,60 +3216,9 @@ status:
   storedVersions: []
 
 ---
-apiVersion: apiextensions.k8s.io/v1
-kind: CustomResourceDefinition
-metadata:
-  name: networksets.crd.projectcalico.org
-spec:
-  group: crd.projectcalico.org
-  names:
-    kind: NetworkSet
-    listKind: NetworkSetList
-    plural: networksets
-    singular: networkset
-  scope: Namespaced
-  versions:
-  - name: v1
-    schema:
-      openAPIV3Schema:
-        description: NetworkSet is the Namespaced-equivalent of the GlobalNetworkSet.
-        properties:
-          apiVersion:
-            description: 'APIVersion defines the versioned schema of this representation
-              of an object. Servers should convert recognized schemas to the latest
-              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
-            type: string
-          kind:
-            description: 'Kind is a string value representing the REST resource this
-              object represents. Servers may infer this from the endpoint the client
-              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
-            type: string
-          metadata:
-            type: object
-          spec:
-            description: NetworkSetSpec contains the specification for a NetworkSet
-              resource.
-            properties:
-              nets:
-                description: The list of IP networks that belong to this set.
-                items:
-                  type: string
-                type: array
-            type: object
-        type: object
-    served: true
-    storage: true
-status:
-  acceptedNames:
-    kind: ""
-    plural: ""
-  conditions: []
-  storedVersions: []
-
----
 ---
 # Source: calico/templates/calico-kube-controllers-rbac.yaml
-
+{{if eq .RBACConfig "rbac"}}
 # Include a clusterrole for the kube-controllers component,
 # and bind it to the calico-kube-controllers serviceaccount.
 kind: ClusterRole
@@ -3500,7 +3458,7 @@ subjects:
 - kind: ServiceAccount
   name: calico-node
   namespace: kube-system
-
+{{end}}
 ---
 # Source: calico/templates/calico-node.yaml
 # This manifest installs the calico-node container, as well
@@ -3518,16 +3476,30 @@ spec:
     matchLabels:
       k8s-app: calico-node
   updateStrategy:
+{{if .UpdateStrategy}}
+{{ toYaml .UpdateStrategy | indent 4}}
+{{else}}
     type: RollingUpdate
     rollingUpdate:
       maxUnavailable: 1
+{{end}}
   template:
     metadata:
       labels:
         k8s-app: calico-node
+      # Rancher-specific: The annotation for scheduler.alpha.kubernetes.io/critical-pod originated from the v3.13.4 base
+      annotations:
+        # This, along with the CriticalAddonsOnly toleration below,
+        # marks the pod as a critical add-on, ensuring it gets
+        # priority scheduling and that its resources are reserved
+        # if it ever gets evicted.
+        scheduler.alpha.kubernetes.io/critical-pod: ''
     spec:
       nodeSelector:
         kubernetes.io/os: linux
+      {{ range $k, $v := .NodeSelector }}
+        {{ $k }}: "{{ $v }}"
+      {{ end }}
       hostNetwork: true
       tolerations:
         # Make sure calico-node gets scheduled on all nodes.
@@ -3538,17 +3510,20 @@ spec:
           operator: Exists
         - effect: NoExecute
           operator: Exists
+	  {{if eq .RBACConfig "rbac"}}
       serviceAccountName: calico-node
+      {{end}}
       # Minimize downtime during a rolling upgrade or deletion; tell Kubernetes to do a "force
       # deletion": https://kubernetes.io/docs/concepts/workloads/pods/pod/#termination-of-pods.
       terminationGracePeriodSeconds: 0
-      priorityClassName: system-node-critical
+      # Rancher specific change
+      priorityClassName: {{ .CalicoNodePriorityClassName | default "system-node-critical" }}
       initContainers:
         # This container performs upgrade from host-local IPAM to calico-ipam.
         # It can be deleted if this is a fresh installation, or if you have already
         # upgraded to use calico-ipam.
         - name: upgrade-ipam
-          image: docker.io/calico/cni:v3.19.0
+          image: {{.CNIImage}}
           command: ["/opt/cni/bin/calico-ipam", "-upgrade"]
           envFrom:
           - configMapRef:
@@ -3575,7 +3550,7 @@ spec:
         # This container installs the CNI binaries
         # and CNI network config file on each node.
         - name: install-cni
-          image: docker.io/calico/cni:v3.19.0
+          image: {{.CNIImage}}
           command: ["/opt/cni/bin/install"]
           envFrom:
           - configMapRef:
@@ -3616,7 +3591,7 @@ spec:
         # Adds a Flex Volume Driver that creates a per-pod Unix Domain Socket to allow Dikastes
         # to communicate with Felix over the Policy Sync API.
         - name: flexvol-driver
-          image: docker.io/calico/pod2daemon-flexvol:v3.19.0
+          image: {{.FlexVolImg}}
           volumeMounts:
           - name: flexvol-driver-host
             mountPath: /host/driver
@@ -3627,7 +3602,7 @@ spec:
         # container programs network policy and routes on each
         # host.
         - name: calico-node
-          image: docker.io/calico/node:v3.19.0
+          image: {{.NodeImage}}
           envFrom:
           - configMapRef:
               # Allow KUBERNETES_SERVICE_HOST and KUBERNETES_SERVICE_PORT to be overridden for eBPF mode.
@@ -3665,7 +3640,7 @@ spec:
               value: "Never"
             # Set MTU for tunnel device used if ipip is enabled
             - name: FELIX_IPINIPMTU
-              valueFrom:
+              valueFrom: # This manifest creates a Pod Disruption Budget for Controller to allow K8s Cluster Autoscaler to evict
                 configMapKeyRef:
                   name: calico-config
                   key: veth_mtu
@@ -3683,10 +3658,11 @@ spec:
                   key: veth_mtu
             # The default IPv4 pool to create on startup if none exists. Pod IPs will be
             # chosen from this range. Changing this value after installation will have
-            # no effect. This should fall within `--cluster-cidr`.
-            # - name: CALICO_IPV4POOL_CIDR
-            #   value: "192.168.0.0/16"
-            # Disable file logging so `kubectl logs` works.
+            # no effect. This should fall within --cluster-cidr.
+            # Rancher-specific: Explicitly set CALICO_IPV4POOL_CIDR
+            - name: CALICO_IPV4POOL_CIDR
+              value: "{{.ClusterCIDR}}"
+            # Disable file logging so kubectl logs works.
             - name: CALICO_DISABLE_FILE_LOGGING
               value: "true"
             # Set Felix endpoint to host default action to ACCEPT.
@@ -3697,6 +3673,19 @@ spec:
               value: "false"
             - name: FELIX_HEALTHENABLED
               value: "true"
+            # Rancher-specific: Define and set FELIX_LOGFILEPATH to none to disable felix logging to file
+            - name: FELIX_LOGFILEPATH
+              value: "none"
+            # Rancher-specific: Define and set FELIX_LOGSEVERITYSYS to no value from default info to disable felix logging to syslog
+            - name: FELIX_LOGSEVERITYSYS
+              value: ""
+            # Set Felix logging to "warning"
+            # Rancher-specific: Set FELIX_LOGSEVERITYSCREEN to Warning from default info
+            - name: FELIX_LOGSEVERITYSCREEN
+              value: "Warning"
+            # Rancher-specific: Set FELIX_IPTABLESBACKEND to auto for autodetection of nftables
+            - name: FELIX_IPTABLESBACKEND
+              value: "auto"
           securityContext:
             privileged: true
           resources:
@@ -3788,15 +3777,19 @@ spec:
         - name: flexvol-driver-host
           hostPath:
             type: DirectoryOrCreate
+{{- if .FlexVolPluginDir }}
+            path: {{.FlexVolPluginDir}}
+{{- else }}
             path: /usr/libexec/kubernetes/kubelet-plugins/volume/exec/nodeagent~uds
+{{- end }}
 ---
-
+{{if eq .RBACConfig "rbac"}}
 apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: calico-node
   namespace: kube-system
-
+{{end}}
 ---
 # Source: calico/templates/calico-kube-controllers.yaml
 # See https://github.com/projectcalico/kube-controllers
@@ -3821,20 +3814,35 @@ spec:
       namespace: kube-system
       labels:
         k8s-app: calico-kube-controllers
+      # Added by Rancher to mark as a critical pod.
+      annotations:
+        scheduler.alpha.kubernetes.io/critical-pod: ''
     spec:
       nodeSelector:
         kubernetes.io/os: linux
+{{- if .Tolerations }}
       tolerations:
+{{ toYaml .Tolerations | indent 6}}
+{{- else }}
+      tolertions:
+         # Rancher-specific: Set tolerations on the calico-kube-controllers so as to let it run on all nodes.
+         # Make sure calico-node gets scheduled on all nodes.
+        - effect: NoSchedule
+          operator: Exists
         # Mark the pod as a critical add-on for rescheduling.
         - key: CriticalAddonsOnly
           operator: Exists
-        - key: node-role.kubernetes.io/master
-          effect: NoSchedule
+        - effect: NoExecute
+          operator: Exists
+{{- end }}
+      {{if eq .RBACConfig "rbac"}}
       serviceAccountName: calico-kube-controllers
-      priorityClassName: system-cluster-critical
+      {{end}}
+      # Rancher specific change
+      priorityClassName: {{ .CalicoKubeControllersPriorityClassName | default "system-cluster-critical" }}
       containers:
         - name: calico-kube-controllers
-          image: docker.io/calico/kube-controllers:v3.19.0
+          image: {{.ControllersImage}}
           env:
             # Choose which controllers to run.
             - name: ENABLED_CONTROLLERS
@@ -3857,13 +3865,13 @@ spec:
             periodSeconds: 10
 
 ---
-
+{{if eq .RBACConfig "rbac"}}
 apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: calico-kube-controllers
   namespace: kube-system
-
+{{end}}
 ---
 
 # This manifest creates a Pod Disruption Budget for Controller to allow K8s Cluster Autoscaler to evict
