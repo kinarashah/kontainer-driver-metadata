@@ -67,6 +67,7 @@ const (
 	nginxIngressV11512 = "nginxingress-v1.15.12"
 
 	nodelocalv115 = "nodelocal-v1.15"
+	nodelocalv121 = "nodelocal-v1.21"
 )
 
 var TemplateIntroducedRanges = map[string][]string{
@@ -77,7 +78,7 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 	return map[string]map[string]string{
 		kdm.Calico: {
 			">=1.21.0-rancher1-1":                    calicov319,
-			">=1.20.4-rancher1-1 <1.21.0-rancher1-1": calicov319,
+			">=1.20.4-rancher1-1 <1.21.0-rancher1-1": calicov3171,
 			">=1.19.4-rancher1-2 <1.20.4-rancher1-1": calicov3165,
 			">=1.19.0-rancher0 <1.19.4-rancher1-2":   calicov3160,
 			">=1.17.4-rancher0 <1.19.0-rancher0":     calicov117Privileged,
@@ -159,9 +160,10 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.17.6-rancher1-1":                     nginxIngressV11512,
 		},
 		kdm.Nodelocal: {
-			">=1.15.11-rancher0 <1.16.0-alpha": nodelocalv115,
-			">=1.16.8-rancher0 <1.17.0-alpha":  nodelocalv115,
-			">=1.17.4-rancher0":                nodelocalv115,
+			">=1.15.11-rancher0 <1.16.0-alpha":     nodelocalv115,
+			">=1.16.8-rancher0 <1.17.0-alpha":      nodelocalv115,
+			">=1.17.4-rancher0 <1.21.0-rancher1-1": nodelocalv115,
+			">=1.21.0-rancher1-1":                  nodelocalv121,
 		},
 		kdm.TemplateKeys: getTemplates(),
 	}
@@ -222,5 +224,6 @@ func getTemplates() map[string]string {
 		nginxIngressV11512: NginxIngressTemplateV0320Rancher1,
 
 		nodelocalv115: NodelocalTemplateV115,
+		nodelocalv121: NodelocalTemplateV121,
 	}
 }

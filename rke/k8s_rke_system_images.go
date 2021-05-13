@@ -5267,9 +5267,9 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			Nodelocal:                 "rancher/mirrored-k8s-dns-node-cache:1.15.13",
 		},
 		// Enabled in v2.6
-		"v1.21.0-rancher1-1": {
-			Etcd:                      "rancher/mirrored-coreos-etcd:v3.4.15-rancher1",
-			Kubernetes:                "rancher/hyperkube:v1.21.0-rancher1",
+		"v1.21.1-rancher1-1": {
+			Etcd:                      "rancher/mirrored-coreos-etcd:v3.4.16-rancher1",
+			Kubernetes:                "rancher/hyperkube:v1.21.1-rancher1",
 			Alpine:                    "rancher/rke-tools:v0.1.74",
 			NginxProxy:                "rancher/rke-tools:v0.1.74",
 			CertDownloader:            "rancher/rke-tools:v0.1.74",
