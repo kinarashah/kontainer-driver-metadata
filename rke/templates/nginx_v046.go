@@ -346,7 +346,7 @@ spec:
         operator: Exists
       - effect: NoSchedule
         operator: Exists
-        containers:
+      containers:
         - name: controller
           image: {{.IngressImage}}
           imagePullPolicy: IfNotPresent
