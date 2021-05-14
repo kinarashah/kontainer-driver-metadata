@@ -252,35 +252,6 @@ spec:
     app.kubernetes.io/instance: ingress-nginx
     app.kubernetes.io/component: controller
 ---
-# Source: ingress-nginx/templates/controller-service.yaml
-apiVersion: v1
-kind: Service
-metadata:
-  annotations:
-  labels:
-    app.kubernetes.io/name: ingress-nginx
-    app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/version: 0.46.0
-    app.kubernetes.io/component: controller
-  name: ingress-nginx-controller
-  namespace: ingress-nginx
-spec:
-  type: LoadBalancer
-  externalTrafficPolicy: Local
-  ports:
-    - name: http
-      port: 80
-      protocol: TCP
-      targetPort: http
-    - name: https
-      port: 443
-      protocol: TCP
-      targetPort: https
-  selector:
-    app.kubernetes.io/name: ingress-nginx
-    app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/component: controller
----
 # Source: ingress-nginx/templates/controller-deployment.yaml
 apiVersion: apps/v1
 kind: DaemonSet
@@ -357,7 +328,9 @@ spec:
                   - /wait-shutdown
           args:
             - /nginx-ingress-controller
-            - --publish-service=$(POD_NAMESPACE)/ingress-nginx-controller
+            {{- if .DefaultBackend}}
+            - --default-backend-service=$(POD_NAMESPACE)/default-http-backend
+            {{- end}}
             - --election-id=ingress-controller-leader
             - --ingress-class=nginx
             - --configmap=$(POD_NAMESPACE)/nginx-configuration
@@ -674,4 +647,86 @@ spec:
       securityContext:
         runAsNonRoot: true
         runAsUser: 2000
+---
+{{- if .DefaultBackend}}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: default-http-backend
+  labels:
+    app: default-http-backend
+  namespace: ingress-nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: default-http-backend
+  template:
+    metadata:
+      labels:
+        app: default-http-backend
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                - key: beta.kubernetes.io/os
+                  operator: NotIn
+                  values:
+                    - windows
+                - key: node-role.kubernetes.io/worker
+                  operator: Exists
+      terminationGracePeriodSeconds: 60
+# Rancher specific change
+{{- if .DefaultHTTPBackendPriorityClassName }}
+      priorityClassName: {{ .DefaultHTTPBackendPriorityClassName }}
+{{- end }}
+{{- if .Tolerations}}
+      tolerations:
+{{ toYaml .Tolerations | indent 6}}
+{{- else }}
+      tolerations:
+      - effect: NoExecute
+        operator: Exists
+      - effect: NoSchedule
+        operator: Exists
+{{- end }}
+      containers:
+      - name: default-http-backend
+        # Any image is permissable as long as:
+        # 1. It serves a 404 page at /
+        # 2. It serves 200 on a /healthz endpoint
+        image: {{.IngressBackend}}
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 30
+          timeoutSeconds: 5
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            cpu: 10m
+            memory: 20Mi
+          requests:
+            cpu: 10m
+            memory: 20Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: default-http-backend
+  namespace: ingress-nginx
+  labels:
+    app: default-http-backend
+spec:
+  ports:
+  - port: 80
+    targetPort: 8080
+  selector:
+    app: default-http-backend
+{{- end }}
 `
