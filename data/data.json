@@ -9344,7 +9344,8 @@
    "\u003e=1.20.0-rancher0 \u003c1.20.12-rancher1-1": "nginxingress-v1.15.12",
    "\u003e=1.20.12-rancher1-1 \u003c1.21.0-rancher0": "nginxingress-v0.49.3",
    "\u003e=1.21.0-rancher0 \u003c1.21.6-rancher1-1": "nginxingress-v0.48.1",
-   "\u003e=1.21.6-rancher1-1 \u003c1.22.0-rancher1-1": "nginxingress-v0.49.3",
+   "\u003e=1.21.6-rancher1-1 \u003c1.21.8-rancher1-2": "nginxingress-v0.49.3",
+   "\u003e=1.21.8-rancher1-2 \u003c1.22.0-rancher1-1": "nginxingress-v1.1.0",
    "\u003e=1.22.0-rancher1-1": "nginxingress-v1.1.0",
    "\u003e=1.8.0-rancher0 \u003c1.13.10-rancher1-3": "nginxingress-v1.8"
   },
