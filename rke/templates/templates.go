@@ -50,6 +50,7 @@ const (
 	coreDnsv116 = "coredns-v1.16"
 	coreDnsv117 = "coredns-v1.17"
 	coreDnsv183 = "coredns-v1.8.3"
+	coreDnsv184 = "corends-v1.8.4"
 
 	kubeDnsv18  = "kubedns-v1.8"
 	kubeDnsv116 = "kubedns-v1.16"
@@ -136,10 +137,11 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.8.0-rancher0 <1.15.0-rancher0": flannelv18,
 		},
 		kdm.CoreDNS: {
-			">=1.21.0-rancher1-1":               coreDnsv183,
-			">=1.17.0-alpha <1.21.0-rancher1-1": coreDnsv117,
-			">=1.16.0-alpha <1.17.0-alpha":      coreDnsv116,
-			">=1.8.0-rancher0 <1.16.0-alpha":    coreDnsv18,
+			">=1.21.8-rancher1-2":                    coreDnsv184,
+			">=1.21.0-rancher1-1 <1.21.8-rancher1-2": coreDnsv183,
+			">=1.17.0-alpha <1.21.0-rancher1-1":      coreDnsv117,
+			">=1.16.0-alpha <1.17.0-alpha":           coreDnsv116,
+			">=1.8.0-rancher0 <1.16.0-alpha":         coreDnsv18,
 		},
 		kdm.KubeDNS: {
 			">=1.16.0-alpha":                 kubeDnsv116,
@@ -178,7 +180,7 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.20.12-rancher1-1 <1.21.0-rancher0":   nginxIngressv0493,
 			">=1.21.0-rancher0 <1.21.6-rancher1-1":    nginxIngressv0481,
 			">=1.21.6-rancher1-1 <1.21.8-rancher1-2":  nginxIngressv0493,
-			">=1.21.8-rancher1-2 <1.22.0-rancher1-1": nginxIngressv110,
+			">=1.21.8-rancher1-2 <1.22.0-rancher1-1":  nginxIngressv110,
 			">=1.22.0-rancher1-1":                     nginxIngressv110,
 		},
 		kdm.Nodelocal: {
@@ -232,6 +234,7 @@ func getTemplates() map[string]string {
 		coreDnsv116: CoreDNSTemplateV116,
 		coreDnsv117: CoreDNSTemplateV117,
 		coreDnsv183: CoreDNSTemplateV183,
+		coreDnsv184: CoreDNSTemplateV184,
 
 		kubeDnsv18:  KubeDNSTemplate,
 		kubeDnsv116: KubeDNSTemplateV116,
