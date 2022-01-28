@@ -6121,7 +6121,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			AciGbpServerContainer:     "noiro/gbp-server:5.1.1.0.1ae238a",
 			AciOpflexServerContainer:  "noiro/opflex-server:5.1.1.0.1ae238a",
 			PodInfraContainer:         "rancher/mirrored-pause:3.2",
-			Ingress:                   "rancher/nginx-ingress-controller:nginx-0.49.3-rancher1",
+			Ingress:                   "rancher/nginx-ingress-controller:nginx-1.1.0-rancher1",
 			IngressBackend:            "rancher/mirrored-nginx-ingress-controller-defaultbackend:1.5-rancher1",
 			IngressWebhook:            "rancher/mirrored-ingress-nginx-kube-webhook-certgen:v1.1.1",
 			MetricsServer:             "rancher/mirrored-metrics-server:v0.5.0",

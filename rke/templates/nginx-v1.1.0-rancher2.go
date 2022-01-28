@@ -45,7 +45,6 @@ metadata:
   namespace: ingress-nginx
 data:
 {{- range $k,$v := .Options }}
-  {{ $k }}: "{{ $v }}"
 {{- end }}
 ---
 kind: ConfigMap
@@ -212,16 +211,11 @@ rules:
     # Here: "<ingress-controller-leader>-<nginx>"
     # This has to be adapted if you change either parameter
     # when launching the nginx-ingress-controller.
-	{{- if $v := (index .Options "default-ingress-class") }}
-		{{- if eq $v "false" }} 
+{{- if and ($v := (index .ExtraArgs "default-ingress-class")) (eq $v "false") }}
       - ingress-controller-leader
-		{{- else }} 
-      - ingress-controller-leader-nginx	
-		{{- end }} 
-	{{- else }} 
-		# default true
+{{- else }}
       - ingress-controller-leader-nginx
-	{{- end }}
+{{- end }}
     verbs:
       - get
       - update
@@ -358,11 +352,12 @@ spec:
             {{- if .DefaultBackend}}
             - --default-backend-service=$(POD_NAMESPACE)/default-http-backend
             {{- end}}
-            {{- if .DefaultIngressClass}}
-            - --election-id=ingress-controller-leader-nginx
-            {{- else }}
+            {{- if and ($v := (index .ExtraArgs "default-ingress-class")) (eq $v "false") }}
             - --election-id=ingress-controller-leader
-            {{- end}}
+            {{- else }}
+            - --election-id=ingress-controller-leader-nginx
+            {{- end }}
+            - --watch-ingress-without-class=true
             - --controller-class=k8s.io/ingress-nginx
             - --configmap=$(POD_NAMESPACE)/ingress-nginx-controller
             - --tcp-services-configmap=$(POD_NAMESPACE)/tcp-services
@@ -371,7 +366,9 @@ spec:
             - --validating-webhook-certificate=/usr/local/certificates/cert
             - --validating-webhook-key=/usr/local/certificates/key
           {{- range $k, $v := .ExtraArgs }}
+          {{- if ne $k "default-ingress-class"}}
             - --{{ $k }}{{if ne $v "" }}={{ $v }}{{end}}
+          {{- end }}
           {{- end }}
           securityContext:
           {{- if ne .NetworkMode "none" }}
@@ -487,10 +484,11 @@ metadata:
     app.kubernetes.io/component: controller
   name: nginx
   namespace: ingress-nginx
-  {{- if .DefaultIngressClass}}
+{{- if and ($v := (index .ExtraArgs "default-ingress-class")) (eq $v "false") }}
+{{- else }}
   annotations:
     ingressclass.kubernetes.io/is-default-class: "true"
-  {{- end}}
+{{- end }}
 spec:
   controller: k8s.io/ingress-nginx
 ---
