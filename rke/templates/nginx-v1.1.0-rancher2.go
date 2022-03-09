@@ -46,6 +46,7 @@ metadata:
   namespace: ingress-nginx
 data:
 {{- range $k,$v := .Options }}
+  {{ $k }}: "{{ $v }}"
 {{- end }}
 ---
 kind: ConfigMap
