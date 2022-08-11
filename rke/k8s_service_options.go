@@ -23,6 +23,30 @@ func loadK8sVersionServiceOptions() map[string]v3.KubernetesServicesOptions {
 			Kubeproxy:      getKubeProxyOptions(),
 			Scheduler:      getSchedulerOptions124(),
 		},
+		//"v1.23.8-rancher1-1": {
+		//	Etcd:           getETCDOptions122v352(),
+		//	KubeAPI:        getKubeAPIOptions121(),
+		//	Kubelet:        getKubeletNewEndpoint(),
+		//	KubeController: getKubeControllerOptions(),
+		//	Kubeproxy:      getKubeProxyOptions(),
+		//	Scheduler:      getSchedulerOptions(),
+		//},
+		"v1.22.11-rancher1-1": {
+			Etcd:           getETCDOptions122(),
+			KubeAPI:        getKubeAPIOptions121(),
+			Kubelet:        getKubeletNewEndpoint(),
+			KubeController: getKubeControllerOptions(),
+			Kubeproxy:      getKubeProxyOptions(),
+			Scheduler:      getSchedulerOptions(),
+		},
+		"v1.21.14-rancher1-1": {
+			Etcd:           getETCDOptions117(),
+			KubeAPI:        getKubeAPIOptions121(),
+			Kubelet:        getKubeletNewEndpoint(),
+			KubeController: getKubeControllerOptions(),
+			Kubeproxy:      getKubeProxyOptions(),
+			Scheduler:      getSchedulerOptions(),
+		},
 		"v1.23.4-rancher1-2": {
 			Etcd:           getETCDOptions122v352(),
 			KubeAPI:        getKubeAPIOptions121(),
@@ -568,4 +592,11 @@ func getETCDOptions122v352() map[string]string {
 		"peer-client-cert-auth":              "true",
 		"experimental-initial-corrupt-check": "true",
 	}
+}
+
+// rke-tools v0.1.86 uses cri-dockerd v0.2.4 which requires the new runtime endpoint
+func getKubeletNewEndpoint() map[string]string {
+	kubeletOptions := getKubeletOptions116()
+	kubeletOptions["container-runtime-endpoint"] = "unix:///var/run/cri-dockerd.sock"
+	return kubeletOptions
 }
