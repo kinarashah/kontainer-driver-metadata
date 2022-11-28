@@ -816,6 +816,7 @@ releases:
       rke2-calico-crd:
         repo: rancher-rke2-charts
         version: v3.24.102
+    featureVersions: *featureVersions-v1
   - version: v1.23.14+rke2r1
     minChannelServerVersion: v2.6.4-alpha1
     maxChannelServerVersion: v2.6.99
