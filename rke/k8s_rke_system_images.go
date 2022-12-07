@@ -8245,7 +8245,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 		// Enabled OOB post Rancher v2.6.9
 		"v1.24.6-rancher1-1": {
 			Etcd:                      "rancher/mirrored-coreos-etcd:v3.5.4",
-			Kubernetes:                "kinarashah/hyperkube:v1.24.6-rancher1",
+			Kubernetes:                "rancher/hyperkube:v1.24.6-rancher1",
 			Alpine:                    "kinarashah/rke-tools:v0.2.0",
 			NginxProxy:                "kinarashah/rke-tools:v0.2.0",
 			CertDownloader:            "kinarashah/rke-tools:v0.2.0",

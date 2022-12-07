@@ -11036,7 +11036,7 @@
    "coredns": "rancher/mirrored-coredns-coredns:1.9.3",
    "corednsAutoscaler": "rancher/mirrored-cluster-proportional-autoscaler:1.8.5",
    "nodelocal": "rancher/mirrored-k8s-dns-node-cache:1.21.1",
-   "kubernetes": "kinarashah/hyperkube:v1.24.6-rancher1",
+   "kubernetes": "rancher/hyperkube:v1.24.6-rancher1",
    "flannel": "rancher/mirrored-coreos-flannel:v0.15.1",
    "flannelCni": "rancher/flannel-cni:v0.3.0-rancher6",
    "calicoNode": "rancher/mirrored-calico-node:v3.22.0",
