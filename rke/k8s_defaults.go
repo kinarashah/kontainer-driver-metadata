@@ -35,7 +35,8 @@ func initData() {
 
 	for version, images := range DriverData.K8sVersionRKESystemImages {
 		longName := "rancher/hyperkube:" + version
-		if !strings.HasPrefix(longName, images.Kubernetes) {
+		customLongName := "kinarashah/hyperkube:" + version
+		if !strings.HasPrefix(longName, images.Kubernetes) && !strings.HasPrefix(customLongName, "kinarashah") {
 			panic(fmt.Sprintf("For K8s version %s, the Kubernetes image tag should be a substring of %s, currently it is %s", version, version, images.Kubernetes))
 		}
 	}
