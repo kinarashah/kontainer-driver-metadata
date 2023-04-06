@@ -11,7 +11,7 @@ appDefaults:
       - appVersion: '>= 2.6.7-0 < 2.7.2-0'
         defaultVersion: '1.24.x'
       - appVersion: '>= 2.7.2-0 < 2.7.100-0'
-        defaultVersion: '1.25.x'
+        defaultVersion: '1.25.x'        
 releases:
   - version: v1.19.16+rke2r1
     minChannelServerVersion: v2.6.0-alpha1
@@ -1098,3 +1098,4 @@ releases:
         repo: rancher-rke2-charts
         version: 1.7.100
     featureVersions: *featureVersions-v1
+    

@@ -11,7 +11,7 @@ appDefaults:
       - appVersion: '>= 2.6.7-0 < 2.7.2-0'
         defaultVersion: '1.24.x'
       - appVersion: '>= 2.7.2-0 < 2.7.100-0'
-        defaultVersion: '1.25.x'
+        defaultVersion: '1.25.x'        
 releases:
   - version: v1.18.20+k3s1
     minChannelServerVersion: v2.6.0-alpha1
