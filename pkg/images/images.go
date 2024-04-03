@@ -34,8 +34,8 @@ const (
 )
 
 var (
-	v270 = semver.MustParse("2.7.0")
-	v290 = semver.MustParse("2.9.0")
+	maxAllowedServerVersion    = semver.MustParse("2.10.0")
+	minAllowedServerVersion = semver.MustParse("2.7.0")
 
 	data     = kdm.Data{}
 	releases = map[string][]map[string]interface{}{}
@@ -246,13 +246,13 @@ func releaseToKeep(release map[string]interface{}) (bool, error) {
 	}
 	minChannelServerVersion, ok := release["minChannelServerVersion"].(string)
 	if ok && minChannelServerVersion != "" {
-		if min, err := semver.ParseTolerant(minChannelServerVersion); err != nil || min.GE(v290) {
+		if min, err := semver.ParseTolerant(minChannelServerVersion); err != nil || min.GE(maxChannelServerVersion) {
 			return false, err
 		}
 	}
 	maxChannelServerVersion, ok := release["maxChannelServerVersion"].(string)
 	if ok && maxChannelServerVersion != "" {
-		if max, err := semver.ParseTolerant(maxChannelServerVersion); err != nil || max.LT(v270) {
+		if max, err := semver.ParseTolerant(maxChannelServerVersion); err != nil || max.LT(minAllowedServerVersion) {
 			return false, err
 		}
 	}
