@@ -16097,11 +16097,11 @@
   },
   "v1.31": {
    "minRKEVersion": "1.7.0-rc0",
-   "minRancherVersion": "2.10.0-patch0"
+   "minRancherVersion": "2.10.0-hotfix"
   },
   "v1.32": {
    "minRKEVersion": "1.8.0-rc0",
-   "minRancherVersion": "2.11.0-patch0"
+   "minRancherVersion": "2.11.0-hotfix"
   },
   "v1.8": {
    "maxRKEVersion": "0.2.2",
