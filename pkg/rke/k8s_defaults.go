@@ -34,7 +34,7 @@ func initData() {
 	}
 
 	postEOLVersionsRange := []semver.Range{
-		semver.MustParseRange(">= 1.32.6-rancher2-1 <1.33.0-rancher1-1"),
+		semver.MustParseRange(">= 1.32.6-rancher1-1 <1.33.0-rancher1-1"),
 	}
 
 	for version, images := range DriverData.K8sVersionRKESystemImages {

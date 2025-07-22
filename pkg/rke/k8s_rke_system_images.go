@@ -12235,7 +12235,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 		// Enabled in Rancher v2.11.4
 		"v1.32.6-rancher1-1": {
 			Etcd:                      "rancher/mirrored-coreos-etcd:v3.5.12",
-			Kubernetes:                "rancher/hyperkube:v1.32.6-rancher1",
+			Kubernetes:                "rke-extended-life/hyperkube:v1.32.6-rancher1",
 			Alpine:                    "rancher/rke-tools:v0.1.114",
 			NginxProxy:                "rancher/rke-tools:v0.1.114",
 			CertDownloader:            "rancher/rke-tools:v0.1.114",
